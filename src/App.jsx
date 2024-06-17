@@ -8,21 +8,22 @@ import RequireAuth from "@components/RequireAuth";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route element={<RequireAuth />}>
-          <Route path="/" element={<Home />} />
-          <Route element={<RequireAuth adminOnly={true} />}>
-            <Route path="/test" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+    <div className="container bg-pink-100">
+      <Router>
+        <Routes>
+          <Route element={<RequireAuth />}>
+            <Route path="/" element={<Home />} />
+            <Route element={<RequireAuth adminOnly={true} />}>
+              <Route path="/testadminpage" element={<Home />} />
+            </Route>
           </Route>
-        </Route>
-        <Route path="/register" element={<Register />} />
-        <Route path="/otp-login" element={<Login withotp={true} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/request-otp" element={<OTPForm />} />
-      </Routes>
-    </Router>
+          <Route path="/register" element={<Register />} />
+          <Route path="/otp-login" element={<Login withotp={true} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/request-otp" element={<OTPForm />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 
