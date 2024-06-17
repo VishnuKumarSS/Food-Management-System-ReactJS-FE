@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "@services/api";
+import { Button } from "@components/ui/button";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center gap-8">
+      <h1>Register User</h1>
       <form onSubmit={handleRegister} className="w-1/3">
         <input
           type="text"
@@ -47,12 +49,9 @@ const Register = () => {
           placeholder="Password"
           className="p-2 border border-gray-300 rounded mb-2 w-full"
         />
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
-        >
+        <Button type="submit" className="w-full">
           Register
-        </button>
+        </Button>
       </form>
       {error && <p className="text-red-500 mt-2">{error}</p>}
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { requestOTP } from "@services/api";
+import { Button } from "./ui/button";
 
 const OTPForm = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,8 @@ const OTPForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-8">
+      <h1>Request New OTP</h1>
       <input
         type="email"
         value={email}
@@ -24,12 +26,7 @@ const OTPForm = () => {
         placeholder="Enter your email"
         className="p-2 border border-gray-300 rounded mb-2"
       />
-      <button
-        onClick={handleOTPRequest}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-      >
-        Request OTP
-      </button>
+      <Button onClick={handleOTPRequest}>Request OTP</Button>
       {message && <p className="text-green-500 mt-2">{message}</p>}
       {error && <p className="text-red-500 mt-2">{error}</p>}
     </div>

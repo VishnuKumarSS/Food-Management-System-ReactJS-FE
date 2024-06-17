@@ -42,7 +42,8 @@ const Login = ({ withotp = false }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-8">
+      <h1>Login User</h1>
       <form onSubmit={handleLogin} className="w-1/3">
         <input
           type="email"
@@ -67,16 +68,12 @@ const Login = ({ withotp = false }) => {
             className="p-2 border border-gray-300 rounded mb-2 w-full"
           />
         )}
-
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
-        >
+        <Button type="submit" className="w-full">
           Login
-        </button>
+        </Button>
       </form>
       {!withotp && (
-        <div className="m-8">
+        <div>
           <Link to={"/otp-login"}>
             <Button variant="outline">Login with OTP</Button>
           </Link>
