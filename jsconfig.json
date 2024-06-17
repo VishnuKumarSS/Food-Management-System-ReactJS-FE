@@ -2,22 +2,15 @@
   "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-          "@/*": [
-              "./src/*"
-          ]
+          "@/*": ["/src/*"],
+          "@components/*": ["src/components/*"],
+          "@assets/*": ["src/assets/*"],
+          "@constants/*": ["src/constants/*"],
+          "@hooks/*": ["src/hooks/*"],
+          "@pages/*": ["src/pages/*"],
+          "@services/*": ["src/services/*"],
+          "@utils/*": ["src/utils/*"]
       }
   },
-//   "include": ["src"],
+  // "include": ["./src"],
 }
-
-// TODO: REMOVE THE BELOW
-// {
-//     "compilerOptions": {
-//       "baseUrl": "./src",
-//       "paths": {
-//         "@components/*": ["components/*"],
-//         "@pages/*": ["pages/*"],
-//         "@utils/*": ["utils/*"]
-//       }
-//     }
-// }
