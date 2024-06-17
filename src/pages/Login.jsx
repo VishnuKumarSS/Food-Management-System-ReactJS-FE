@@ -25,10 +25,14 @@ const Login = ({ withotp = false }) => {
       });
       const responseData = response.data;
       const accessToken = responseData.access;
+      const refreshToken = responseData.refresh;
+
       let decodedToken = jwtDecode(accessToken);
 
       localStorage.setItem("token", accessToken);
-      localStorage.setItem("user", JSON.stringify(decodedToken));
+      localStorage.setItem("refresh", refreshToken);
+      localStorage.setItem("userData", JSON.stringify(decodedToken));
+
       navigate("/");
     } catch (error) {
       setError(error.message);
