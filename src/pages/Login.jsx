@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { api } from "@services/api";
+import { Button } from "@components/ui/button";
 
 const Login = ({ withotp = false }) => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Login = ({ withotp = false }) => {
       navigate("/");
     } catch (error) {
       setError(error.message);
+      navigate("/otp-login");
     }
   };
 
@@ -73,6 +75,13 @@ const Login = ({ withotp = false }) => {
           Login
         </button>
       </form>
+      {!withotp && (
+        <div className="m-8">
+          <Link to={"/otp-login"}>
+            Login with OTP from <Button variant="outline">here</Button>
+          </Link>
+        </div>
+      )}
       {error && <p className="text-red-500 mt-2">{error}</p>}
     </div>
   );
