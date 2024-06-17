@@ -6,9 +6,11 @@
               "./src/*"
           ]
       }
-  }
+  },
+//   "include": ["src"],
 }
 
+// TODO: REMOVE THE BELOW
 // {
 //     "compilerOptions": {
 //       "baseUrl": "./src",
