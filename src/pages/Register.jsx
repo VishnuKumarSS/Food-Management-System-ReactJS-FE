@@ -24,7 +24,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center ">
       <form onSubmit={handleRegister} className="w-1/3">
         <input
           type="text"

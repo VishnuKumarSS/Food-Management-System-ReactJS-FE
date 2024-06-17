@@ -42,7 +42,7 @@ const Login = ({ withotp = false }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center">
       <form onSubmit={handleLogin} className="w-1/3">
         <input
           type="email"
