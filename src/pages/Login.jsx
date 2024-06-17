@@ -78,7 +78,7 @@ const Login = ({ withotp = false }) => {
       {!withotp && (
         <div className="m-8">
           <Link to={"/otp-login"}>
-            Login with OTP from <Button variant="outline">here</Button>
+            <Button variant="outline">Login with OTP</Button>
           </Link>
         </div>
       )}
