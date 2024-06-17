@@ -1,11 +1,21 @@
 {
-    "compilerOptions": {
-      "baseUrl": "./src",
+  "compilerOptions": {
+      "baseUrl": ".",
       "paths": {
-        "@components/*": ["components/*"],
-        "@pages/*": ["pages/*"],
-        "@utils/*": ["utils/*"]
+          "@/*": [
+              "./src/*"
+          ]
       }
-    }
   }
-  
+}
+
+// {
+//     "compilerOptions": {
+//       "baseUrl": "./src",
+//       "paths": {
+//         "@components/*": ["components/*"],
+//         "@pages/*": ["pages/*"],
+//         "@utils/*": ["utils/*"]
+//       }
+//     }
+// }
