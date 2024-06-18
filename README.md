@@ -1,3 +1,17 @@
+# Food Management System Frontend
+
+## Client side configurations
+
+#### 1. Install npm packages:
+```bash
+npm i
+```
+
+#### 2. Run development server:
+```bash
+npm run dev
+```
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
