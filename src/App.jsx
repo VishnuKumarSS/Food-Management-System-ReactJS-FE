@@ -12,6 +12,8 @@ import RequireAuth from "@components/RequireAuth";
 import AddFoodItem from "@components/AddFoodItem";
 import FoodItemList from "@components/FoodItemList";
 import UpdateFoodItem from "@components/UpdateFoodItem";
+import Cart from "@pages/Cart";
+import OrderList from "@pages/OrderList";
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
           <Routes>
             <Route element={<RequireAuth />}>
               <Route path="/" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/orders" element={<OrderList />} />
               <Route element={<RequireAuth adminOnly={true} />}>
                 <Route path="/testadminpage" element={<Home />} />
                 <Route path="/manage-food-items" element={<FoodItemList />} />
