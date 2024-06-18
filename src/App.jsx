@@ -23,8 +23,8 @@ const App = () => {
             <Route element={<RequireAuth />}>
               <Route path="/" element={<Home />} />
               <Route element={<RequireAuth adminOnly={true} />}>
-                <Route path="/manage-food-items" element={<FoodItemList />} />
                 <Route path="/testadminpage" element={<Home />} />
+                <Route path="/manage-food-items" element={<FoodItemList />} />
                 <Route path="/add-food-item" element={<AddFoodItem />} />
                 <Route
                   path="/update-food-item/:id"

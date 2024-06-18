@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
+
 import { api } from "@services/api";
+
 import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
 
 const AddFoodItem = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -30,6 +37,7 @@ const AddFoodItem = () => {
       })
       .then((response) => {
         console.log("Food item added successfully!", response.data);
+        navigate("/manage-food-items");
       })
       .catch((error) => {
         console.error("There was an error adding the food item!", error);
@@ -37,69 +45,50 @@ const AddFoodItem = () => {
   };
 
   return (
-    <div className="mx-auto px-4 container">
-      <h1 className="text-2xl font-bold mb-4">Add Food Item</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2" htmlFor="name">
-            Name
-          </label>
+    <div className="mx-auto px-4 container flex flex-col items-center justify-center">
+      <h1>Add Food Item</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col w-1/2 gap-4">
+        <div>
+          <Label htmlFor="name">Name</Label>
           <Input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2" htmlFor="description">
-            Description
-          </label>
-          <textarea
+        <div>
+          <Label htmlFor="description">Description</Label>
+
+          <Textarea
             name="description"
             value={formData.description}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
-          ></textarea>
+          />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2" htmlFor="price">
-            Price
-          </label>
-          <input
+        <div>
+          <Label htmlFor="price">Price</Label>
+          <Input
             type="number"
             name="price"
             value={formData.price}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
-        <div className="mb-4">
-          <label
-            className="block text-sm font-bold mb-2"
-            htmlFor="quantity_available"
-          >
-            Quantity Available
-          </label>
-          <input
+        <div>
+          <Label htmlFor="quantity_available">Quantity Available</Label>
+          <Input
             type="number"
             name="quantity_available"
             value={formData.quantity_available}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Add Food Item
-        </button>
+        <Button type="submit">Add Food Item</Button>
       </form>
     </div>
   );
