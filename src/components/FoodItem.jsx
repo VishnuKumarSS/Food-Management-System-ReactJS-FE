@@ -1,36 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { api } from "@services/api";
 import React from "react";
 
 function FoodItem({
   item,
   isAdmin = false,
   handleDelete = null,
-  onAddToCart = null,
+  handleIncrease,
+  handleDecrease,
 }) {
-  const token = localStorage.getItem("token");
-
-  const handleAddToCart = (foodItemId) => {
-    api
-      .post(
-        "/orders/cart/items/",
-        { food_item: foodItemId, quantity: 1 },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
-      .then((response) => {
-        console.log("Item added to cart:", response.data);
-        if (onAddToCart) onAddToCart(foodItemId);
-      })
-      .catch((error) => {
-        console.error("There was an error adding the item to the cart!", error);
-      });
-  };
-
   return (
     <div className="flex flex-col border rounded-lg p-4 shadow-md">
       <h3 className="text-lg font-medium mb-2">{item.name}</h3>
@@ -57,14 +35,25 @@ function FoodItem({
           </Button>
         </div>
       ) : (
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => handleAddToCart(item.id)}
-          disabled={item.quantity_available <= 0}
-        >
-          Add to Cart
-        </Button>
+        <div className="flex items-center mt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleDecrease(item.id, item.quantity)}
+            disabled={item.quantity <= 0}
+          >
+            -
+          </Button>
+          <span className="mx-2">{item.quantity}</span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleIncrease(item.id, item.quantity)}
+            disabled={item.quantity >= item.quantity_available}
+          >
+            +
+          </Button>
+        </div>
       )}
     </div>
   );
