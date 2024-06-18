@@ -107,7 +107,7 @@ const Cart = () => {
                 </p>
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-semibold">
-                    ${item.food_item.price}
+                    ₹{item.food_item.price}
                   </span>
                 </div>
                 <div className="flex items-center mt-2">
