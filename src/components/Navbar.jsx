@@ -24,14 +24,16 @@ export default function Navbar() {
         <div className="flex flex-row gap-4">
           {isAuthenticated ? (
             <>
-              <Button variant="outline" size="sm">
-                <Link
-                  to={"/manage-food-items"}
-                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                >
-                  Manage Food Items
-                </Link>
-              </Button>
+              {JSON.parse(localStorage.getItem("userData")).is_admin && (
+                <Button variant="outline" size="sm">
+                  <Link
+                    to={"/manage-food-items"}
+                    className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                  >
+                    Manage Food Items
+                  </Link>
+                </Button>
+              )}
               <Button
                 variant="destructive"
                 size="sm"
