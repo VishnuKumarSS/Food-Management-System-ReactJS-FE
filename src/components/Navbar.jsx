@@ -34,6 +34,22 @@ export default function Navbar() {
                   </Link>
                 </Button>
               )}
+              <Button variant="outline" size="sm">
+                <Link
+                  to={"/cart"}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                >
+                  Cart
+                </Link>
+              </Button>
+              <Button variant="outline" size="sm">
+                <Link
+                  to={"/orders"}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                >
+                  Orders
+                </Link>
+              </Button>
               <Button
                 variant="destructive"
                 size="sm"
