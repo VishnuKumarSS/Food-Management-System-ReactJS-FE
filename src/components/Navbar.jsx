@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex h-16 w-full items-center justify-center px-4 md:px-6">
+    <header className="flex h-16 w-full items-center justify-center px-4 md:px-6 rounded-lg mt-4 bg-gray-100">
       <nav className="hidden items-center gap-6 sm:flex w-full justify-between">
         <Link
           to={"/"}
@@ -102,6 +102,72 @@ export default function Navbar() {
             <div className="flex flex-col gap-4">
               {isAuthenticated ? (
                 <>
+                  {JSON.parse(localStorage.getItem("userData")).is_admin && (
+                    <Button variant="outline" size="sm">
+                      <Link
+                        to={"/manage-food-items"}
+                        className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                      >
+                        Manage Food Items
+                      </Link>
+                    </Button>
+                  )}
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/cart"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Cart
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/orders"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Orders
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    onClick={handleSignOut}
+                  >
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/register"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Register
+                    </Link>
+                  </Button>
+
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/login"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Login
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/request-otp"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Request OTP
+                    </Link>
+                  </Button>
+                </>
+              )}
+              {/* {isAuthenticated ? (
+                <>
                   <Button variant="outline" size="sm">
                     <Link
                       to={"/manage-food-items"}
@@ -147,7 +213,7 @@ export default function Navbar() {
                     </Link>
                   </Button>
                 </>
-              )}
+              )} */}
             </div>
           </div>
         </SheetContent>
