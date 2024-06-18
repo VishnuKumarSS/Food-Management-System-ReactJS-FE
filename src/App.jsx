@@ -9,6 +9,9 @@ import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import OTPForm from "@components/OTPForm";
 import RequireAuth from "@components/RequireAuth";
+import AddFoodItem from "@components/AddFoodItem";
+import FoodItemList from "@components/FoodItemList";
+import UpdateFoodItem from "@components/UpdateFoodItem";
 
 const App = () => {
   return (
@@ -20,7 +23,13 @@ const App = () => {
             <Route element={<RequireAuth />}>
               <Route path="/" element={<Home />} />
               <Route element={<RequireAuth adminOnly={true} />}>
+                <Route path="/manage-food-items" element={<FoodItemList />} />
                 <Route path="/testadminpage" element={<Home />} />
+                <Route path="/add-food-item" element={<AddFoodItem />} />
+                <Route
+                  path="/update-food-item/:id"
+                  element={<UpdateFoodItem />}
+                />
               </Route>
             </Route>
             <Route path="/register" element={<Register />} />

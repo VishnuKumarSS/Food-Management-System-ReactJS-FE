@@ -5,6 +5,8 @@ import { useNavigate, Link } from "react-router-dom";
 
 import { api } from "@services/api";
 import { Button } from "@components/ui/button";
+import { Input } from "@components/ui/input";
+import { Label } from "@components/ui/label";
 
 const Login = ({ withotp = false }) => {
   const navigate = useNavigate();
@@ -45,30 +47,35 @@ const Login = ({ withotp = false }) => {
     <div className="flex flex-col items-center justify-center gap-8">
       <h1>Login User</h1>
       <form onSubmit={handleLogin} className="w-1/3">
-        <input
+        <Label htmlFor="email">Email</Label>
+
+        <Input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          className="p-2 border border-gray-300 rounded mb-2 w-full"
         />
-        <input
+
+        <Label htmlFor="password">Password</Label>
+        <Input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          className="p-2 border border-gray-300 rounded mb-2 w-full"
         />
+
         {withotp && (
-          <input
-            type="text"
-            value={otp}
-            onChange={(e) => setOTP(e.target.value)}
-            placeholder="OTP"
-            className="p-2 border border-gray-300 rounded mb-2 w-full"
-          />
+          <>
+            <Label htmlFor="text">Enter your OTP</Label>
+            <Input
+              type="text"
+              value={otp}
+              onChange={(e) => setOTP(e.target.value)}
+              placeholder="OTP"
+            />
+          </>
         )}
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full mt-8">
           Login
         </Button>
       </form>

@@ -70,10 +70,10 @@
 
 @layer base {
   * {
-    @apply border-border font-primary;
+    @apply border-border font-secondary;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
 }
 

@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <header className="flex h-16 w-full items-center justify-center px-4 md:px-6">
-      <nav className="hidden items-center gap-6 md:flex w-full justify-between">
+      <nav className="hidden items-center gap-6 sm:flex w-full justify-between">
         <Link
           to={"/"}
           className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
@@ -23,72 +23,114 @@ export default function Navbar() {
         </Link>
         <div className="flex flex-row gap-4">
           {isAuthenticated ? (
-            <Button
-              variant="destructive"
-              size="sm"
-              className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-              onClick={handleSignOut}
-            >
-              Logout
-            </Button>
+            <>
+              <Button variant="outline" size="sm">
+                <Link
+                  to={"/manage-food-items"}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                >
+                  Manage Food Items
+                </Link>
+              </Button>
+              <Button
+                variant="destructive"
+                size="sm"
+                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                onClick={handleSignOut}
+              >
+                Logout
+              </Button>
+            </>
           ) : (
             <>
-              <Link
-                to={"/register"}
-                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-              >
-                <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm">
+                <Link
+                  to={"/register"}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                >
                   Register
-                </Button>
-              </Link>
+                </Link>
+              </Button>
 
-              <Link
-                to={"/login"}
-                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-              >
-                <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm">
+                <Link
+                  to={"/login"}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                >
                   Login
-                </Button>
-              </Link>
-              <Link
-                to={"/request-otp"}
-                className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-              >
-                <Button variant="outline" size="sm">
+                </Link>
+              </Button>
+              <Button variant="outline" size="sm">
+                <Link
+                  to={"/request-otp"}
+                  className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                >
                   Request OTP
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </>
           )}
         </div>
       </nav>
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="md:hidden">
+          <Button variant="outline" size="icon" className="sm:hidden">
             <MenuIcon className="h-6 w-6" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="right">
           <div className="grid gap-4 p-4">
-            <Link
-              to={"/"}
-              className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-            >
-              Home
-            </Link>
-            <Link
-              to={"/"}
-              className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-            >
-              About
-            </Link>
-            <Link
-              to={"/"}
-              className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-            >
-              Contact
-            </Link>
+            <div className="flex flex-col gap-4">
+              {isAuthenticated ? (
+                <>
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/manage-food-items"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Manage Food Items
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    onClick={handleSignOut}
+                  >
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/register"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Register
+                    </Link>
+                  </Button>
+
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/login"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Login
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="sm">
+                    <Link
+                      to={"/request-otp"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Request OTP
+                    </Link>
+                  </Button>
+                </>
+              )}
+            </div>
           </div>
         </SheetContent>
       </Sheet>
