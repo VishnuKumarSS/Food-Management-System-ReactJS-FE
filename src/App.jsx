@@ -15,6 +15,8 @@ import UpdateFoodItem from "@components/UpdateFoodItem";
 import Cart from "@pages/Cart";
 import OrderList from "@pages/OrderList";
 import AllOrderListAdmin from "@pages/AllOrderListAdmin";
+import NotFound from "@pages/NotFound";
+
 
 const App = () => {
   return (
@@ -44,6 +46,7 @@ const App = () => {
             <Route path="/otp-login" element={<Login withotp={true} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/request-otp" element={<OTPForm />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </div>
