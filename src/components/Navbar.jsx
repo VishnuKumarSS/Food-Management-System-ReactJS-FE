@@ -25,14 +25,32 @@ export default function Navbar() {
           {isAuthenticated ? (
             <>
               {JSON.parse(localStorage.getItem("userData")).is_admin && (
-                <Button variant="outline" size="sm">
-                  <Link
-                    to={"/manage-food-items"}
-                    className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                <>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-2 border-gray-300 border-dashed"
                   >
-                    Manage Food Items
-                  </Link>
-                </Button>
+                    <Link
+                      to={"/manage-food-items"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      Manage Food Items
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-2 border-gray-300 border-dashed"
+                  >
+                    <Link
+                      to={"/all-orders-admin"}
+                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    >
+                      All orders
+                    </Link>
+                  </Button>
+                </>
               )}
               <Button variant="outline" size="sm">
                 <Link
@@ -103,14 +121,32 @@ export default function Navbar() {
               {isAuthenticated ? (
                 <>
                   {JSON.parse(localStorage.getItem("userData")).is_admin && (
-                    <Button variant="outline" size="sm">
-                      <Link
-                        to={"/manage-food-items"}
-                        className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                    <>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="border-2 border-gray-300 border-dashed"
                       >
-                        Manage Food Items
-                      </Link>
-                    </Button>
+                        <Link
+                          to={"/manage-food-items"}
+                          className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                        >
+                          Manage Food Items
+                        </Link>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="border-2 border-gray-300 border-dashed"
+                      >
+                        <Link
+                          to={"/all-orders-admin"}
+                          className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
+                        >
+                          All orders
+                        </Link>
+                      </Button>
+                    </>
                   )}
                   <Button variant="outline" size="sm">
                     <Link
@@ -166,54 +202,6 @@ export default function Navbar() {
                   </Button>
                 </>
               )}
-              {/* {isAuthenticated ? (
-                <>
-                  <Button variant="outline" size="sm">
-                    <Link
-                      to={"/manage-food-items"}
-                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                    >
-                      Manage Food Items
-                    </Link>
-                  </Button>
-                  <Button
-                    variant="destructive"
-                    size="sm"
-                    className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                    onClick={handleSignOut}
-                  >
-                    Logout
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button variant="outline" size="sm">
-                    <Link
-                      to={"/register"}
-                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                    >
-                      Register
-                    </Link>
-                  </Button>
-
-                  <Button variant="outline" size="sm">
-                    <Link
-                      to={"/login"}
-                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                    >
-                      Login
-                    </Link>
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Link
-                      to={"/request-otp"}
-                      className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
-                    >
-                      Request OTP
-                    </Link>
-                  </Button>
-                </>
-              )} */}
             </div>
           </div>
         </SheetContent>

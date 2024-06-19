@@ -14,6 +14,7 @@ import FoodItemList from "@components/FoodItemList";
 import UpdateFoodItem from "@components/UpdateFoodItem";
 import Cart from "@pages/Cart";
 import OrderList from "@pages/OrderList";
+import AllOrderListAdmin from "@pages/AllOrderListAdmin";
 
 const App = () => {
   return (
@@ -27,9 +28,12 @@ const App = () => {
               <Route path="/cart" element={<Cart />} />
               <Route path="/orders" element={<OrderList />} />
               <Route element={<RequireAuth adminOnly={true} />}>
-                <Route path="/testadminpage" element={<Home />} />
                 <Route path="/manage-food-items" element={<FoodItemList />} />
                 <Route path="/add-food-item" element={<AddFoodItem />} />
+                <Route
+                  path="/all-orders-admin"
+                  element={<AllOrderListAdmin />}
+                />
                 <Route
                   path="/update-food-item/:id"
                   element={<UpdateFoodItem />}
