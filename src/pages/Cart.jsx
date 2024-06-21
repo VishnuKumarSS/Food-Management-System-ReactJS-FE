@@ -41,11 +41,16 @@ const Cart = () => {
         console.log("API response:", response.data);
         setCart((prevCart) => {
           console.log(prevCart, response.data, newQuantity);
-          const updatedItems = prevCart.items.map((item) =>
-            item.food_item.id === foodItemId
-              ? { ...item, quantity: newQuantity }
-              : item
-          );
+          const updatedItems =
+            newQuantity > 0
+              ? prevCart.items.map((item) =>
+                  item.food_item.id === foodItemId
+                    ? { ...item, quantity: newQuantity }
+                    : item
+                )
+              : prevCart.items.filter(
+                  (item) => item.food_item.id !== foodItemId
+                );
           return { ...prevCart, items: updatedItems };
         });
       })
