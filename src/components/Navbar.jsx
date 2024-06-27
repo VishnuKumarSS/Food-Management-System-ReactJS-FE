@@ -1,6 +1,7 @@
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex h-16 w-full items-center justify-center px-4 md:px-6 rounded-lg mt-4 bg-gray-100">
+    <header className="flex h-16 w-full items-center justify-center px-4 md:px-6 rounded-lg mt-4 bg-gray-100 dark:bg-gray-900">
       <nav className="hidden items-center gap-6 sm:flex w-full justify-between">
         <Link
           to={"/"}
@@ -29,7 +30,7 @@ export default function Navbar() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-2 border-gray-300 border-dashed"
+                    className="border-2 border-gray-300 border-dashed dark:border-inherit"
                   >
                     <Link
                       to={"/manage-food-items"}
@@ -41,7 +42,7 @@ export default function Navbar() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-2 border-gray-300 border-dashed"
+                    className="border-2 border-gray-300 border-dashed dark:border-inherit"
                   >
                     <Link
                       to={"/all-orders-admin"}
@@ -76,6 +77,7 @@ export default function Navbar() {
               >
                 Logout
               </Button>
+              <ModeToggle />
             </>
           ) : (
             <>
@@ -125,7 +127,7 @@ export default function Navbar() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-2 border-gray-300 border-dashed"
+                        className="border-2 border-gray-300 border-dashed dark:border-inherit"
                       >
                         <Link
                           to={"/manage-food-items"}
@@ -137,7 +139,7 @@ export default function Navbar() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-2 border-gray-300 border-dashed"
+                        className="border-2 border-gray-300 border-dashed dark:border-inherit"
                       >
                         <Link
                           to={"/all-orders-admin"}
