@@ -18,7 +18,7 @@ function Home() {
   const [previousPage, setPreviousPage] = useState(null);
   const [nextPage, setNextPage] = useState(null);
   const token = localStorage.getItem("token");
-  const pageSize = 4;
+  const pageSize = 10;
 
   const fetchData = async (page, pageSize) => {
     try {
