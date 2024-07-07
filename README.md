@@ -18,8 +18,9 @@ npm run dev
 ![image](https://github.com/VishnuKumarSS/Food-Management-System-ReactJS-FE/assets/90044424/647c2a67-2fe0-42ec-b2dd-92c6447c80c4)
 
 ## Registration/Login flow
-> Register Page \
+> Register Page
 ![image](https://github.com/VishnuKumarSS/Food-Management-System-ReactJS-FE/assets/90044424/db9d7a85-e031-47ff-8cad-bb77f413a01e)
+
 > Login with OTP (First Time)
 ![image](https://github.com/VishnuKumarSS/Food-Management-System-ReactJS-FE/assets/90044424/8bbba546-0960-4432-8a37-48c4702e46da)
 > Login page
