@@ -14,7 +14,7 @@ npm run dev
 
 # Screenshots
 
-## Pagination for specific pages with complete backend implementation (Including Homepage, Orders section)
+## Pagination for specific pages with complete backend implementation (Homepage, Orders section)
 ![image](https://github.com/VishnuKumarSS/Food-Management-System-ReactJS-FE/assets/90044424/647c2a67-2fe0-42ec-b2dd-92c6447c80c4)
 
 ## Registration/Login flow
