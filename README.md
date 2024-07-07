@@ -12,6 +12,12 @@ npm i
 npm run dev
 ```
 
+# Flow Diagram
+![Food Management System drawio 1](https://github.com/VishnuKumarSS/Food-Management-System-ReactJS-FE/assets/90044424/51d79e63-6b09-4009-8323-f02c757fd18c)
+
+# Entity Relationship Diagram
+![Food Management System ER diagram 1](https://github.com/VishnuKumarSS/Food-Management-System-ReactJS-FE/assets/90044424/f5b0554f-2f8f-4096-bce4-9063e25a630e)
+
 # Screenshots
 
 ## Pagination for specific pages with complete backend implementation (Homepage, Orders section)
