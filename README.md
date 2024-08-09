@@ -1,7 +1,7 @@
 # Food Management System
 Robust food management application features role-based access, allowing restaurant owners to authorize workers to manage inventory, view sold items, and handle orders. It includes secure email OTP verification with a 5-minute expiration to ensure authentication. Backend performance is optimized through data pagination, enhancing efficiency. Regular users can manage their cart and orders, with all actions securely authenticated.
 
-> [Server Repository ➡️](https://github.com/VishnuKumarSS/Food-Management-System-Django-BE)
+> [Backend Server Repository ➡️](https://github.com/VishnuKumarSS/Food-Management-System-Django-BE)
 
 ## Client side configurations
 
